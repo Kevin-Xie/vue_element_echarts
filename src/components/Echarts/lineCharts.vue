@@ -1,17 +1,32 @@
 <template>
-  <div class="hello">
+  <div>
     <p>{{ msg }}</p>
+    <div id='temperatureChart' style="width: 700px;height:500px;">
+    </div>  
   </div>
+  
 </template>
 
 <script>
-
+import {temperatureOption} from '../../assets/temperature.js'
 export default {
   name: 'lineChart',
   data () {
     return {
       msg: 'line charts'
     }
+  },
+  methods: {
+    genAllCharts() {
+      this.genTemperatureChangeChart();
+    },
+    genTemperatureChangeChart() {
+      let temperatureChart = this.$echarts.init(document.getElementById('temperatureChart'));
+      temperatureChart.setOption(temperatureOption);
+    }
+  },
+  mounted() {
+    this.genAllCharts();
   }
 }
 </script>
