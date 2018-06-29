@@ -1,7 +1,7 @@
 let option = {
     title: {
         text: '未来一周气温变化',
-        subtext: '纯属虚构'
+        // subtext: '纯属虚构'
     },
     tooltip: {
         trigger: 'axis'
@@ -83,5 +83,5 @@ let option = {
 };
 
 module.exports = {
-	temperatureOption: option
+	lineChart4Option: option
 }
