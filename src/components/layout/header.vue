@@ -2,20 +2,20 @@
 	<div class="">
 		<el-row>
 			<el-col :span=2>
-				<img src="../../assets/logo.png" width="60px">
+				<slot name="logo"></slot>
 			</el-col>
 			<el-col :span=20>
-				<v-menu></v-menu>
+				<v-menu-bar></v-menu-bar>
 			</el-col>
 			<el-col :span=2>
-				
+				<router-link to="/"></router-link>
 			</el-col>
 		</el-row>
 	</div>
 </template>
 
 <script>
-import VMenu from './menu.vue';
+import VMenuBar from './menuBar.vue';
 
 export default {
 	name: 'myHeader',
@@ -24,7 +24,7 @@ export default {
 		}
 	},
 	components: {
-		VMenu
+		VMenuBar
 	},
 	methods: {
       handleSelect(key, keyPath) {

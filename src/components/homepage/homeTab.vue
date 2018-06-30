@@ -1,9 +1,5 @@
 <template>
 	<div>
-		<p>Vue</p>
-		<p>Vue-router</p>
-		<p>Element UI</p>
-		<p>Echarts <el-button @click="goToEcharts">go to line charts</el-button> </p>
 	</div>
 </template>
 
@@ -19,10 +15,13 @@ export default {
 		goToEcharts() {
 			this.$router.push('/linecharts')
 		}
+	},
+	mounted() {
+		        
 	}
 }
+    
 </script>
 
 <style>
-	
 </style>

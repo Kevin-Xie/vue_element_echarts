@@ -1,6 +1,8 @@
 <template>
 	<div class="home">
-		<v-header></v-header>
+		<v-header>
+			<img slot="logo" class="logo-class" src="../assets/logo.png" @click="reload">
+		</v-header>
 		<div class="content">
 			<router-view></router-view>
 		</div>
@@ -8,7 +10,7 @@
 </template>
 
 <script>
-import VHeader from '../components/layout/myHeader.vue'
+import VHeader from '../components/layout/header.vue'
 export default {
 	name: 'home',
 	data() {
@@ -21,10 +23,17 @@ export default {
 	},
 	mounted() {
 		// console.log(this.$router)
+	},
+	methods: {
+		reload() {
+			window.location.reload();
+		}
 	}
 }
 </script>
 
 <style scoped>
-	
+.logo-class {
+	width: 60px;
+}
 </style>
