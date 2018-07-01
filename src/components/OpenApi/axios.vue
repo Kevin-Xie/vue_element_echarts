@@ -1,17 +1,21 @@
 <template>
-  <div class="hello">
-    <p>{{ msg }}</p>
+  <div>
+
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Charts',
+  name: 'axios',
   data () {
     return {
-      msg: 'Welcome to charts'
+
     }
+  },
+  methods: {
+
+  },
+  mounted() {
   }
 }
 </script>

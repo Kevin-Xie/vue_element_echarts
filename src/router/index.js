@@ -7,6 +7,7 @@ import PieCharts from '@/components/Echarts/pieCharts'
 import homeTab from '@/components/homepage/homeTab'
 import LineCharts from '@/components/Echarts/lineCharts'
 import BarCharts from '@/components/Echarts/barCharts'
+import DoubanMovie from '@/components/OpenApi/doubanMovie'
 
 Vue.use(Router)
 
@@ -32,7 +33,11 @@ export default new Router({
       	{
       		path: 'barcharts',
       		component: BarCharts
-      	}
+      	},
+        {
+          path: 'doubanmovie',
+          component: DoubanMovie
+        }
       ]
     },
     {

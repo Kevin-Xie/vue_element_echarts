@@ -13,7 +13,10 @@
 				<el-menu-item index="/barcharts">Bar Charts</el-menu-item>
 			</el-submenu>
 			<el-menu-item index="2">Table</el-menu-item>
-			<el-menu-item index="3">Axios</el-menu-item>
+			<el-submenu index="3">
+				<template slot="title">OpenApi</template>
+				<el-menu-item index="/doubanmovie">douban Movie</el-menu-item>
+			</el-submenu>
 			<el-menu-item index="4">About me</el-menu-item>
 		</el-menu>
 	</div>
