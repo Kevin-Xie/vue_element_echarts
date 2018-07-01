@@ -1,19 +1,22 @@
 <template>
   <div class="movie_item">
-      <h2>{{title}}</h2>
+      <h3>{{title}}</h3>
     <div>
       <el-popover 
         placement="right"
         trigger="hover"
-        title="主演"
-        :content="hoverContent">
+        >
         <img :src="post" width="80%" slot="reference">
+        <div>
+          <p>主演</p>
+          <p>{{casts}}</p>
+          <p>导演</p>
+          <p>{{directors}}</p>
+        </div>
       </el-popover>
     </div>
     <div>
-      <!-- <p>{{casts}}</p> -->
       <p>{{genres}}</p>
-      <!-- <p>{{directors}}</p> -->
       <div>
         <p v-if="score > 0">{{score}}</p>
         <p v-else>暂无评分</p>
@@ -57,13 +60,13 @@ export default {
       return this.movie.images.small;
     },
     casts() {
-      return this.movie.casts.map(cast => cast.name).join(',');
+      return this.movie.casts.map(cast => cast.name).join(' | ');
     },
     genres() {
       return this.movie.genres.join(',');
     },
     directors() {
-      return this.movie.directors.map(director => director.name).join(',');
+      return this.movie.directors.map(director => director.name).join(' | ');
     },
     score() {
       return this.movie.rating.average;

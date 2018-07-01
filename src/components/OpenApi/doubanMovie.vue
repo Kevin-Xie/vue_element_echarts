@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div  class="common">
     <h1>正在上映</h1>
     <div>
 	    <div class="movie-list">
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import {douban} from '../../../config/api'	
 import VMovieItem from './movieItem'
 // import {movies} from '../../assets/movies'
 import {Loading} from 'element-ui';
@@ -39,7 +40,7 @@ export default {
     	// this.movies = movies.subjects;
     	// this.updateCurrentPageData(1, this.pageSize)
     	const loading = Loading.service({fullscreen: true})
-    	this.$Axios.get('/api/movie/in_theaters?city=zhuhai&count=50')
+    	this.$Axios.get(douban.movie.in_theaters)
     	.then(res => {
     					console.log(res.data.subjects);
     					this.movies = res.data.subjects;
@@ -81,10 +82,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.pager-class {
+.common {
 	text-align: center;
 }
+.pager-class {
+}
 .movie-list {
-	text-align: center;
 }
 </style>
