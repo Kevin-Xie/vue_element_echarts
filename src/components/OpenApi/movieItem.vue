@@ -1,9 +1,14 @@
 <template>
   <div class="movie_item">
-    <slot></slot>
       <h2>{{title}}</h2>
     <div>
-      <img :src="post"  width="80%">
+      <el-popover 
+        placement="right"
+        trigger="hover"
+        title="主演"
+        :content="hoverContent">
+        <img :src="post" width="80%" slot="reference">
+      </el-popover>
     </div>
     <div>
       <!-- <p>{{casts}}</p> -->
@@ -65,6 +70,9 @@ export default {
     },
     rateScore() {
       return this.score / 10 * 5;
+    },
+    hoverContent() {
+      return this.casts;
     }
   }
 }
