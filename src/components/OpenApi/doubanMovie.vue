@@ -1,6 +1,6 @@
 <template>
   <div  class="common">
-    <h1>正在上映</h1>
+    <h1>{{title}}</h1>
     <div>
 	    <div class="movie-list">
 	    	<v-movie-item v-for="(movie, index) in currentPageData" :movie="movie" :key="index"></v-movie-item>
@@ -35,12 +35,17 @@ export default {
       pageSize: 4,
     }
   },
+  watch: {
+  	'$route' (to, from) {
+  		this.initMovieData();	//watch if $route changed, and re-gain data from api
+  	}
+  },
   methods: {
     initMovieData() {
     	// this.movies = movies.subjects;
     	// this.updateCurrentPageData(1, this.pageSize)
     	const loading = Loading.service({fullscreen: true})
-    	this.$Axios.get(douban.movie.in_theaters)
+    	this.$Axios.get(douban.movie[this.api].url)
     	.then(res => {
     					console.log(res.data.subjects);
     					this.movies = res.data.subjects;
@@ -72,6 +77,12 @@ export default {
   	totalRecords() {
   		return this.movies.length;
   	},
+  	api() {
+  		return this.$route.params.api;
+  	},
+  	title() {
+  		return douban.movie[this.api].description;
+  	}
   },
   mounted() {
   	console.log('parent mounted')

@@ -35,7 +35,7 @@ export default new Router({
       		component: BarCharts
       	},
         {
-          path: 'doubanmovie',
+          path: 'doubanmovie/:api',
           component: DoubanMovie
         }
       ]
