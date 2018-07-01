@@ -2,18 +2,27 @@
   <div class="movie_item">
     <slot></slot>
       <h2>{{title}}</h2>
-    <div width="100%">
-      <img :src="post">
+    <div>
+      <img :src="post"  width="80%">
     </div>
     <div>
       <!-- <p>{{casts}}</p> -->
       <p>{{genres}}</p>
-      <p>{{directors}}</p>
-      <p>{{score}}</p>
+      <!-- <p>{{directors}}</p> -->
+      <div>
+        <p v-if="score > 0">{{score}}</p>
+        <p v-else>暂无评分</p>
+        <el-rate v-model="rateScore" 
+                disabled
+                allow-half
+                text-color="#ff9900"
+                v-if="score > 0">
+              </el-rate>
+      </div>
     </div>
   </div>
 </template>
-
+<!--  -->
 <script>
 export default {
   name: 'movieItem',
@@ -53,6 +62,9 @@ export default {
     },
     score() {
       return this.movie.rating.average;
+    },
+    rateScore() {
+      return this.score / 10 * 5;
     }
   }
 }
