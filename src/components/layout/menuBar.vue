@@ -33,7 +33,7 @@
 						<el-menu-item index="4-1-3-2">Music Api 2</el-menu-item>
 					</el-submenu>
 				</el-submenu>
-				<el-submenu>
+				<el-submenu index="4-2">
 					<template slot="title">ele</template>
 				</el-submenu>
 			</el-submenu>
