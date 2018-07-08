@@ -27,6 +27,14 @@ module.exports = {
                 '^/douban': ''
             }
         },
+        '/api': {
+            target: 'https://movie.douban.com',
+            changeOrigin: true,
+            secure: false,
+            pathRewrite: {
+                '^/api': ''
+            }
+        },
     },
 
     // Various Dev Server settings

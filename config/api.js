@@ -11,6 +11,14 @@ const douban  = {
 		coming_soon: {
 			description: '即将上映',
 			url: '/douban/movie/coming_soon',
+		},
+		search: {
+			description: '搜索',
+			url: '/douban/movie/search?q=',
+		},
+		suggest: {
+			description: 'auto-complete',
+			url: '/api/j/subject_suggest?q='
 		}
 	}
 }

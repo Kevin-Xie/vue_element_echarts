@@ -22,6 +22,7 @@
 						<el-menu-item index="/doubanmovie/in_theaters">Movies in_theaters</el-menu-item>
 						<el-menu-item index="/doubanmovie/top250">Movies top250</el-menu-item>
 						<el-menu-item index="/doubanmovie/coming_soon">Movies coming_soon</el-menu-item>
+						<el-menu-item index="/doubanmovie/search">Search</el-menu-item>
 					</el-submenu>
 					<el-submenu index="4-1-2">
 						<template slot="title">Book</template>
