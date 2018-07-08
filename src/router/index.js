@@ -7,8 +7,8 @@ import PieCharts from '@/components/Echarts/pieCharts'
 import homeTab from '@/components/homepage/homeTab'
 import LineCharts from '@/components/Echarts/lineCharts'
 import BarCharts from '@/components/Echarts/barCharts'
-import DoubanMovie from '@/components/OpenApi/doubanMovie'
-
+import DoubanMovie from '@/components/OpenApi/douban/doubanMovie'
+import Test from '@/components/test/test'
 Vue.use(Router)
 
 export default new Router({
@@ -37,7 +37,11 @@ export default new Router({
         {
           path: 'doubanmovie/:api',
           component: DoubanMovie
-        }
+        },
+        {
+          path: 'test',
+          component: Test
+        },
       ]
     },
     {

@@ -11,6 +11,14 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+        '/baidumap': {
+            target: 'http://api.map.baidu.com',
+            changeOrigin: true,
+            secure: false,
+            pathRewrite: {
+                '^/baidumap': ''
+            }
+        },
         '/douban': {
             target: 'https://api.douban.com/v2',
             changeOrigin: true,
@@ -18,7 +26,7 @@ module.exports = {
             pathRewrite: {
                 '^/douban': ''
             }
-        }
+        },
     },
 
     // Various Dev Server settings

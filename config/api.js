@@ -10,7 +10,7 @@ const douban  = {
 		},
 		coming_soon: {
 			description: '即将上映',
-			url: 'douban/movie/coming_soon',
+			url: '/douban/movie/coming_soon',
 		}
 	}
 }
@@ -19,8 +19,16 @@ const ele = {
 
 }
 
+const AppKey = 'AEa9a349339b1f99c3f37fd531ab8c8b'
+const baiduMap = {
+	location: {
+		description: 'city level location',
+		url: `/baidumap/location/ip?ak=${AppKey}`,
+	}
+}
 
 export {
 	douban,
 	ele,
+	baiduMap
 }

@@ -8,9 +8,9 @@
         >
         <img :src="post" width="80%" slot="reference">
         <div>
-          <p>主演</p>
+          <p v-show="casts">主演</p>
           <p>{{casts}}</p>
-          <p>导演</p>
+          <p v-show="directors">导演</p>
           <p>{{directors}}</p>
         </div>
       </el-popover>

@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import {douban} from '../../../config/api'	
+import {douban} from '../../../../config/api'	
 import VMovieItem from './movieItem'
 // import {movies} from '../../assets/movies'
 import {Loading} from 'element-ui';
@@ -45,7 +45,7 @@ export default {
     	// this.movies = movies.subjects;
     	// this.updateCurrentPageData(1, this.pageSize)
     	const loading = Loading.service({fullscreen: true})
-    	this.$Axios.get(douban.movie[this.api].url)
+    	this.$axios.get(douban.movie[this.api].url)
     	.then(res => {
     					console.log(res.data.subjects);
     					this.movies = res.data.subjects;

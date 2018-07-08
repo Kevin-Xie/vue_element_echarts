@@ -38,7 +38,7 @@
 					<template slot="title">ele</template>
 				</el-submenu>
 			</el-submenu>
-			<el-menu-item index="5">About me</el-menu-item>
+			<el-menu-item index="/test">Test</el-menu-item>
 		</el-menu>
 	</div>
 </template>
